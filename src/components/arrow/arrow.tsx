@@ -45,8 +45,7 @@ export class Arrow {
     // Get blocking point  content
     let arrowContent = this.arrow.getElementsByClassName("arrow");
 
-    arrowContent[0].setAttribute("style", "background-image: url('"+ getAssetPath('./assets/imgs/this.arrowImage')+"')" );
-    arrowContent[0].setAttribute("style", "background-image: url('./assets/imgs/this.arrowImage')" );
+    arrowContent[0].setAttribute("style", "background-image: url('"+ getAssetPath('./assets/imgs/'+this.arrowImage)+"')" );
   }
 
   /**
