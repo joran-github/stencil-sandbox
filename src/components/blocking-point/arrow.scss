@@ -1,0 +1,53 @@
+@import '../../../node_modules/bootstrap/scss/_functions.scss';
+@import '../../../node_modules/bootstrap/scss/_variables.scss';
+@import '../../../node_modules/bootstrap/scss/_mixins.scss';
+@import '../../../node_modules/bootstrap/scss/_popover.scss';
+@import '../../../node_modules/bootstrap/scss/_tooltip.scss';
+
+.reasons-popover-title {
+  background-size: contain; // Adjust size from left
+  color: #FF0000;
+  margin: auto;
+}
+
+div {
+  .arrow {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+    &.state-undefined {
+      background-size: contain;
+    }
+
+    &.state-arrow {
+      background-size: contain;
+    }
+
+    &.state-not-arrow {
+      background-size: contain;
+    }
+
+    &.visible {
+      visibility: visible;
+    }
+
+    &.hidden {
+      visibility: hidden;
+    }
+  }
+
+  .rotate-up {
+    transform: rotate(0deg);
+  }
+  .rotate-down {
+    transform: rotate(180deg);
+  }
+  .rotate-right {
+    transform: rotate(90deg);
+  }
+  .rotate-left {
+    transform: rotate(-90deg);
+  }
+}
