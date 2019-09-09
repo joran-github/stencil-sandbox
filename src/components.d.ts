@@ -9,13 +9,12 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface Arrow {
-    'NotArrowImage': string;
+  interface ArrowComponent {
+    'RedArrowImage': string;
     'UndefinedArrowImage': string;
-    'arrowImage': string;
     'arrowId': string;
+    'arrowImage': string;
     'orientation'?: 'top' | 'bottom' | 'right' | 'left';
-    'reasonTitle': string;
     'reasonsPosition'?: 'top' | 'bottom' | 'right' | 'left' | 'auto';
     'reasonsTrigger'?: 'click' | 'hover' | 'focus' | 'manual';
     'visible': boolean;
@@ -25,31 +24,30 @@ export namespace Components {
 declare global {
 
 
-  interface HTMLArrowElement extends Components.Arrow, HTMLStencilElement {}
-  var HTMLArrowElement: {
-    prototype: HTMLArrowElement;
-    new (): HTMLArrowElement;
+  interface HTMLArrowComponentElement extends Components.ArrowComponent, HTMLStencilElement {}
+  var HTMLArrowComponentElement: {
+    prototype: HTMLArrowComponentElement;
+    new (): HTMLArrowComponentElement;
   };
   interface HTMLElementTagNameMap {
-    'arrow': HTMLArrowElement;
+    'arrow-component': HTMLArrowComponentElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface Arrow extends JSXBase.HTMLAttributes<HTMLArrowElement> {
-    'NotArrowImage': string;
-    'UndefinedArrowImage': string;
-    'arrowImage': string;
-    'arrowId': string;
+  interface ArrowComponent extends JSXBase.HTMLAttributes<HTMLArrowComponentElement> {
+    'RedArrowImage'?: string;
+    'UndefinedArrowImage'?: string;
+    'arrowId'?: string;
+    'arrowImage'?: string;
     'orientation'?: 'top' | 'bottom' | 'right' | 'left';
-    'reasonTitle': string;
     'reasonsPosition'?: 'top' | 'bottom' | 'right' | 'left' | 'auto';
     'reasonsTrigger'?: 'click' | 'hover' | 'focus' | 'manual';
-    'visible': boolean;
+    'visible'?: boolean;
   }
 
   interface IntrinsicElements {
-    'arrow': Arrow;
+    'arrow-component': ArrowComponent;
   }
 }
 
