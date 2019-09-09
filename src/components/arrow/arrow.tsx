@@ -15,9 +15,9 @@ export class Arrow {
 
   @Prop() visible: boolean = true;
 
-  @Prop() arrowImage: string = 'arrow-red.png';
+  @Prop() arrowImage: string = 'arrow-green.png';
 
-  @Prop() RedArrowImage: string = 'arrow-green.png';
+  @Prop() RedArrowImage: string = 'arrow-red.png';
 
   @Prop() UndefinedArrowImage: string = 'arrow-grey.png';
 
@@ -43,7 +43,7 @@ export class Arrow {
 
   private updateStyle() {
     // Get blocking point  content
-    let arrowContent = this.arrow.getElementsByClassName("arrow-point");
+    let arrowContent = this.arrow.getElementsByClassName("arrow");
 
     arrowContent[0].setAttribute("style", "background-image: url('"+ getAssetPath('./assets/imgs/this.arrowImage')+"')" );
     arrowContent[0].setAttribute("style", "background-image: url('./assets/imgs/this.arrowImage')" );
@@ -93,10 +93,10 @@ export class Arrow {
 
     switch (this.arrowState) {
       case 'permit':
-        arrowStateClassName = 'state-not-blocking';
+        arrowStateClassName = 'state-not-arrow';
         break;
       case 'blocking':
-        arrowStateClassName = 'state-blocking';
+        arrowStateClassName = 'state-arrow';
         break;
       default:
         arrowStateClassName = 'state-undefined';
@@ -107,7 +107,7 @@ export class Arrow {
   }
 
   private getArrowClass() {
-    let arowClass = 'arrow-point';
+    let arowClass = 'arrow';
     arowClass += ' ' + this.getVisibilityClass();
     arowClass += ' ' + this.getStateClass();
     arowClass += ' ' + this.getOrientationClass();
